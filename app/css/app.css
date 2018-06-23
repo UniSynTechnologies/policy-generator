@@ -79,6 +79,15 @@
 		margin-right: 16px;
 	}
 }
+
+.textAlignCenter {
+    text-align: center;
+}
+
 .initialInfoBG {
     background-color: lightgray;
+}
+
+.privacyPolicyGeneratorContainer {
+    width: 800px;
 }
