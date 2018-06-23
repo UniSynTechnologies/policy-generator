@@ -88,15 +88,24 @@ app.controller('mainCtrl', ['$scope', function($scope){
     $scope.currentQuestion = 0;
 
     $scope.totalQuestions = Object.keys($scope.questionnaireContents).length;
+    $scope.test = function () {
+        console.log('hi')
+    }
 
     $scope.startNewPolicy = function() {
         $scope.newPolicy.addingInfo = true;
+        var infoFormElement = document.querySelector(".infoFormHide");
+        infoFormElement.classList.remove('infoFormHide');
     }
     $scope.showQuestionnaire = function() {
+        console.log("hi");
         if ($scope.newPolicy.addingInfo) {
+            var infoFormElement = document.querySelector(".infoFormHide");
+            infoFormElement.classList.add('infoFormHide');
             $scope.newPolicy.addingInfo = false;
             $scope.newPolicy.questionaire = true;
         }
+    }
 
     $scope.goToNextQuestion = function() {
         $scope.currentQuestion += 1;
@@ -113,5 +122,4 @@ app.controller('mainCtrl', ['$scope', function($scope){
     }
 
 
-    }
 }]);

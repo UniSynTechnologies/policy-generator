@@ -84,10 +84,23 @@
     text-align: center;
 }
 
-.initialInfoBG {
+.mainBanner {
     background-color: lightgray;
+    background-image: url(/app/assets/images/headerImg.jpg);
+    color: #fff;
+    z-index: 5;
 }
 
 .privacyPolicyGeneratorContainer {
     width: 800px;
+}
+
+.infoForm {
+    transition: transform 0.5s, opacity 1s;
+}
+
+.infoFormHide {
+    opacity: 0;
+    z-index: -5;
+    transform: translateY(-50%);
 }

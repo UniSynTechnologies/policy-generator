@@ -31,8 +31,9 @@
             <md-button class="md-primary">More Tools</md-button>
         </header>
         <md-divider></md-divider>
-        <div class="initialInfoBG" layout="column" layout-gt-sm="row" layout-align="space-around center">
-            <md-content class="md-block md-padding md-margin initialInfoBG">
+            <md-content class="md-block md-padding md-margin mainBanner"
+                        layout="column"
+                        layout-align="space-around center">
                 <label class="md-display-3">Privacy Policy Generator</label>
                 <div ng-hide="newPolicy.questionaire">
                     <p>Let us do the hard work for you! With our free <strong>Privacy Policy Generator</strong>,
@@ -44,9 +45,8 @@
             </md-content>
         </div>
         <div layout="column" layout-align="center center">
-            <md-content class="md-block md-padding md-vertical-margin privacyPolicyGeneratorContainer"
-                        ng-show="newPolicy.addingInfo">
-                <form name="initialInfoForm" ng-submit="showQuestionnaire()">
+            <md-content class="md-block md-padding md-vertical-margin privacyPolicyGeneratorContainer infoForm infoFormHide">
+                <form name="infoForm" ng-submit="test()">
                     <md-toolbar class="md-primary">
                         <div class="md-toolbar-tools" style="text-align: center;">
                             <label class="md-headline" flex>Just Some Basic Info...</label>
@@ -90,7 +90,7 @@
                         <label>Website Url</label>
                         <input ng-model="newPolicy.companyWebsite" name="companyWebsite"  ng-required="true">
                     </md-input-container>
-                    <md-button type="submit" class="md-primary md-raised">Continue</md-button>
+                    <md-button type="submit" ng-click="test()" class="md-primary md-raised">Continue</md-button>
                 </form>
             </md-content>
             <md-content class="md-block md-padding md-vertical-margin privacyPolicyGeneratorContainer"
