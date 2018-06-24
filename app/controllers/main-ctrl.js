@@ -120,6 +120,4 @@ app.controller('mainCtrl', ['$scope', function($scope){
             $scope.currentQuestion -= 1;
         }
     }
-
-
 }]);

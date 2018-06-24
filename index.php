@@ -31,9 +31,8 @@
             <md-button class="md-primary">More Tools</md-button>
         </header>
         <md-divider></md-divider>
-            <md-content class="md-block md-padding md-margin mainBanner"
-                        layout="column"
-                        layout-align="space-around center">
+        <div class="bannerContainer" layout="column" layout-gt-sm="row" layout-align="space-around center">
+            <md-content class="md-block md-padding md-margin bannerContent">
                 <label class="md-display-3">Privacy Policy Generator</label>
                 <div ng-hide="newPolicy.questionaire">
                     <p>Let us do the hard work for you! With our free <strong>Privacy Policy Generator</strong>,
