@@ -84,10 +84,18 @@
     text-align: center;
 }
 
-.initialInfoBG {
+.bannerContent {
+    background-color: rgba(0,0,0,0);
+    color: #fff;
+}
+
+.bannerContainer {
     background-color: lightgray;
+    background-image: url(/app/assets/images/banner.jpg);
 }
 
 .privacyPolicyGeneratorContainer {
     width: 800px;
 }
+
+

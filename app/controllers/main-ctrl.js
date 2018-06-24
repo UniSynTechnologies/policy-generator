@@ -97,6 +97,7 @@ app.controller('mainCtrl', ['$scope', function($scope){
             $scope.newPolicy.addingInfo = false;
             $scope.newPolicy.questionaire = true;
         }
+    }
 
     $scope.goToNextQuestion = function() {
         $scope.currentQuestion += 1;
@@ -110,8 +111,5 @@ app.controller('mainCtrl', ['$scope', function($scope){
         else {
             $scope.currentQuestion -= 1;
         }
-    }
-
-
     }
 }]);
