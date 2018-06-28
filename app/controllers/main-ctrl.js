@@ -14,6 +14,21 @@ app.controller('mainCtrl', ['$scope', function($scope){
         companyWebsite: "",
     }
 
+    $scope.questionnaire = {
+        storage: {
+            answer: "false",
+            answerDescription: "",
+        },
+        usage: {
+            answer: "false",
+            answerDescription: "",
+        },
+        sharing: {
+            answer: "false",
+            answerDescription: "",
+        },
+    }
+
     $scope.startNewPolicy = function() {
         $scope.newPolicy.addingInfo = true;
     }

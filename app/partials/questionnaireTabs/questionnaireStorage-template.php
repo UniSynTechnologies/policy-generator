@@ -51,17 +51,17 @@
     <br>
 </div>
 <div class="md-title">Do you track any other forms of user data?</div>
-<md-radio-group ng-model="storage.answer"
+<md-radio-group ng-model="questionnaire.storage.answer"
                 class="md-vertical-padding"
                 layout="row"
                 layout-align="space-around center">
     <md-radio-button value="true">Yes</md-radio-button>
     <md-radio-button value="false">No</md-radio-button>
 </md-radio-group>
-<div ng-show="storage.answer == 'true'">
+<div ng-show="questionnaire.storage.answer == 'true'">
     <div class="md-title">Please provide a brief description</div>
     <md-input-container class="md-block" flex>
         <label>Description</label>
-        <textarea ng-model="storage.answerDescription"></textarea>
+        <textarea ng-model="questionnaire.storage.answerDescription"></textarea>
     </md-input-container>
 </div>

@@ -10,10 +10,7 @@
             <questionnaire-sharing></questionnaire-sharing>
         </md-tab>
     </md-tabs>
-    <md-button class="md-primary md-raised"
-               ng-disabled="(storage.answer == 'true' && storage.answerDescription == '') ||
-                            (usage.answerDescription == 'true' && usage.answerDescription == '') ||
-                            (sharing.answerDescription == 'true' && sharing.answerDescription == '')">
+    <md-button class="md-primary md-raised">
         Generate Policy
     </md-button>
     <md-button class="md-accent" ng-click="backToInitialInfo()">Edit Company Info</md-button>
