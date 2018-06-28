@@ -1,17 +1,17 @@
 app.controller('policyQuestionnaire', ['$scope', function($scope) {
 
     $scope.storage = {
-        answer: false,
+        answer: "false",
         answerDescription: "",
     }
 
     $scope.usage = {
-        answer: false,
+        answer: "false",
         answerDescription: "",
     }
 
     $scope.sharing = {
-        answer: false,
+        answer: "false",
         answerDescription: "",
     }
 
