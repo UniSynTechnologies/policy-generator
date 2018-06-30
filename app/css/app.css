@@ -101,6 +101,15 @@ md-input-container .md-errors-spacer {
 	}
 }
 
+.unisyn-big-button.md-button {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 16px;
+}
+
 .textAlignCenter {
     text-align: center;
 }

@@ -19,7 +19,6 @@
         <script src="/app/app.js"></script>
         <!-- Controllers -->
         <script src="/app/controllers/main-ctrl.js"></script>
-        <script src="/app/controllers/policyQuestionnaire-ctrl.js"></script>
         <!-- Directives -->
         <script src="/app/directives/privacyPolicyGenerator.js"></script>
         <script src="/app/directives/policyInitialInfo.js"></script>

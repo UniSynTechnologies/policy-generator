@@ -2,6 +2,7 @@ app.controller('mainCtrl', ['$scope', function($scope){
     $scope.newPolicy = {
         addingInfo: false,
         questionaire: false,
+        selectedTab: 0,
         companyName: "",
         email: "",
         companyAddress: {
@@ -16,15 +17,15 @@ app.controller('mainCtrl', ['$scope', function($scope){
 
     $scope.questionnaire = {
         storage: {
-            answer: "false",
+            answer: false,
             answerDescription: "",
         },
         usage: {
-            answer: "false",
+            answer: false,
             answerDescription: "",
         },
         sharing: {
-            answer: "false",
+            answer: false,
             answerDescription: "",
         },
     }
@@ -45,5 +46,9 @@ app.controller('mainCtrl', ['$scope', function($scope){
             $scope.newPolicy.questionaire = false;
             $scope.newPolicy.addingInfo = true;
         }
+    }
+
+    $scope.nextTab = function() {
+        $scope.newPolicy.selectedTab += 1;
     }
 }]);

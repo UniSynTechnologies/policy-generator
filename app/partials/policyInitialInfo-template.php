@@ -68,6 +68,6 @@
                 <div ng-message="required"><span class="error">This field is required.</span></div>
             </div>
         </md-input-container>
-        <md-button type="submit" class="md-primary md-raised">Continue</md-button>
+        <md-button type="submit" class="md-primary md-raised unisyn-big-button">Continue</md-button>
     </form>
 </md-content>

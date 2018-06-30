@@ -19,8 +19,8 @@
                     class="md-vertical-padding"
                     layout="row"
                     layout-align="space-around center">
-        <md-radio-button value="true">Yes</md-radio-button>
-        <md-radio-button value="false">No</md-radio-button>
+        <md-radio-button ng-value="true">Yes</md-radio-button>
+        <md-radio-button ng-value="false">No</md-radio-button>
     </md-radio-group>
     <div ng-show="questionnaireContents[ currentQuestion ].answer == 'true'">
         <div class="md-title">Please provide a brief description</div>

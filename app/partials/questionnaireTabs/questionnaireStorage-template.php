@@ -1,6 +1,7 @@
 <md-toolbar>
-    <div class="md-toolbar-tools" style="text-align: center;">
+    <div class="md-toolbar-tools">
         <label class="md-headline" flex>Data Tracking and Storing</label>
+        <md-button ng-click="backToInitialInfo()">Edit Company Info</md-button>
     </div>
 </md-toolbar>
 <br>
@@ -55,10 +56,10 @@
                 class="md-vertical-padding"
                 layout="row"
                 layout-align="space-around center">
-    <md-radio-button value="true">Yes</md-radio-button>
-    <md-radio-button value="false">No</md-radio-button>
+    <md-radio-button ng-value="true">Yes</md-radio-button>
+    <md-radio-button ng-value="false">No</md-radio-button>
 </md-radio-group>
-<div ng-show="questionnaire.storage.answer == 'true'">
+<div ng-show="questionnaire.storage.answer">
     <div class="md-title">Please provide a brief description</div>
     <md-input-container class="md-block" flex>
         <label>Description</label>

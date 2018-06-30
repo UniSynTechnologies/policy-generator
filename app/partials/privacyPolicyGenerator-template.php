@@ -15,7 +15,7 @@
                 you can have a custom policy on your desk in as little as <strong>Five Minutes</strong>!
                 </p>
             </div>
-            <md-button class="md-primary md-raised" ng-click="startNewPolicy()" ng-hide="newPolicy.addingInfo || newPolicy.questionaire">Let's Get Started</md-button>
+            <md-button class="md-primary md-raised unisyn-big-button" ng-click="startNewPolicy()" ng-hide="newPolicy.addingInfo || newPolicy.questionaire">Let's Get Started</md-button>
         </md-content>
     </div>
     <div layout="column" layout-align="center center">
