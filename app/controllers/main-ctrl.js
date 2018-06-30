@@ -1,4 +1,4 @@
-app.controller('mainCtrl', ['$scope', function($scope){
+app.controller('mainCtrl', ['$scope', '$mdDialog', function($scope, $mdDialog){
     $scope.newPolicy = {
         addingInfo: false,
         questionaire: false,
@@ -50,5 +50,14 @@ app.controller('mainCtrl', ['$scope', function($scope){
 
     $scope.nextTab = function() {
         $scope.newPolicy.selectedTab += 1;
+    }
+
+    $scope.openLegitimateInterestDialog = function(event) {
+        $mdDialog.show({
+            contentElement: '#legitimateInterestDialogContainer',
+            parent: angular.element(document.body),
+            targetEvent: event,
+            clickOutsideToClose: true
+        });
     }
 }]);

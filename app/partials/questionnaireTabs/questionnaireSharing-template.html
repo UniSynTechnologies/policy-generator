@@ -1,33 +1,50 @@
 <md-toolbar>
-        <div class="md-toolbar-tools" style="text-align: center;">
-            <label class="md-headline" flex>{{ questionnaireContents[ currentQuestion ].header }}
-            </label>
-            <md-button ng-click="backToInitialInfo()">Edit Company Info</md-button>
-        </div>
-    </md-toolbar>
-    <br>
-    <div class="md-title">{{ questionnaireContents[ currentQuestion ].subheader }}</div>
-    <br>
-    <div ng-repeat="content in questionnaireContents[ currentQuestion ].content">
-        <strong><em>"{{ content.title }}"</em></strong>
-        <br>
-        <div style="text-indent: 2em;">
-            {{ content.description() }}
-        </div>
-        <br>
+    <div class="md-toolbar-tools">
+        <label class="md-headline" flex>Data Sharing
+        </label>
+        <md-button ng-click="backToInitialInfo()">Edit Company Info</md-button>
     </div>
-    <div class="md-title">{{ questionnaireContents[ currentQuestion ].question }}</div>
-    <md-radio-group ng-model="questionnaireContents[ currentQuestion ].answer"
-                    class="md-vertical-padding"
-                    layout="row"
-                    layout-align="space-around center">
-        <md-radio-button ng-value="true">Yes</md-radio-button>
-        <md-radio-button ng-value="false">No</md-radio-button>
-    </md-radio-group>
-    <div ng-show="questionnaireContents[ currentQuestion ].answer">
-        <div class="md-title">Please provide a brief description</div>
-        <md-input-container class="md-block" flex>
-            <label>Description</label>
-            <textarea ng-model="questionnaireContents[ currentQuestion ].answerDescription"></textarea>
-        </md-input-container>
+</md-toolbar>
+<br>
+<div class="md-title">Usually, your company will share user data with:</div>
+<br>
+<div>
+    <strong><em>"The {{ newPolicy.companyName }} Team"</em></strong>
+    <br>
+    <div style="text-indent: 2em;">
+        Information may be shared internally to help provide, improve, protect, and promote our service.
     </div>
+    <br>
+</div>
+<div>
+    <strong><em>"Third Party Applications"</em></strong>
+    <br>
+    <div style="text-indent: 2em;">
+        If you choose to integrate any {{ newPolicy.companyName }} applications with 3rd party applications,
+        remember that their use of your information will be governed by their privacy policies and terms.
+    </div>
+    <br>
+</div>
+<div>
+    <strong><em>"Legal"</em></strong>
+    <br>
+    <div style="text-indent: 2em;">
+        We may disclose your information to third parties if necessary to comply with the law. 
+    </div>
+    <br>
+</div>
+<div class="md-title">Do you know of any other ways that your company shares user data?</div>
+<md-radio-group ng-model="questionnaire.sharing.answer"
+                class="md-vertical-padding"
+                layout="row"
+                layout-align="space-around center">
+    <md-radio-button ng-value="true">Yes</md-radio-button>
+    <md-radio-button ng-value="false">No</md-radio-button>
+</md-radio-group>
+<div ng-show="questionnaire.sharing.answer">
+    <div class="md-title">Please provide a brief description</div>
+    <md-input-container class="md-block" flex>
+        <label>Description</label>
+        <textarea ng-model="questionnaire.sharing.answerDescription"></textarea>
+    </md-input-container>
+</div>
