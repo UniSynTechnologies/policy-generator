@@ -1,6 +1,8 @@
 <md-toolbar>
         <div class="md-toolbar-tools" style="text-align: center;">
-            <label class="md-headline" flex>{{ questionnaireContents[ currentQuestion ].header }}</label>
+            <label class="md-headline" flex>{{ questionnaireContents[ currentQuestion ].header }}
+            </label>
+            <md-button ng-click="backToInitialInfo()">Edit Company Info</md-button>
         </div>
     </md-toolbar>
     <br>
@@ -22,7 +24,7 @@
         <md-radio-button ng-value="true">Yes</md-radio-button>
         <md-radio-button ng-value="false">No</md-radio-button>
     </md-radio-group>
-    <div ng-show="questionnaireContents[ currentQuestion ].answer == 'true'">
+    <div ng-show="questionnaireContents[ currentQuestion ].answer">
         <div class="md-title">Please provide a brief description</div>
         <md-input-container class="md-block" flex>
             <label>Description</label>
