@@ -60,4 +60,8 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', function($scope, $mdDialog){
             clickOutsideToClose: true
         });
     }
+
+    $scope.cancelDialog = function() {
+        $mdDialog.cancel();
+    }
 }]);
