@@ -1,0 +1,97 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <label class="md-headline" flex>Data Usage</label>
+        <md-button ng-click="backToInitialInfo()">Edit Company Info</md-button>
+    </div>
+</md-toolbar>
+<br>
+<div class="md-title">Some common reasons that user data may be accessed by your company include:</div>
+<br>
+<div>
+    <strong><em>"Contractual Necessity"</em></strong>
+    <br>
+    <div style="text-indent: 2em;">
+        We process Personal Data as a matter of “contractual necessity”, meaning that we need to process the data to perform under our Terms of Service with you, which enables us to provide you with the Services. When we process data due to contractual necessity, failure to provide such Personal Data will result in your inability to use some or all portions of the Services that require such data. 
+    </div>
+    <br>
+</div>
+<div>
+    <strong><em>"Legitimate Interest"</em></strong>
+    <md-button class="md-icon-button" ng-click="openLegitimateInterestDialog($event)">
+        <md-tooltip md-direction="right">What Is This?</md-tooltip>
+        <md-icon md-font-set="material-icons"> help </md-icon>
+    </md-button>
+    <br>
+    <div style="text-indent: 2em;">
+        We process Personal Data such as your name, email address, and mailing address when we believe it furthers the legitimate interest of us or third parties. 
+    </div>
+    <br>
+</div>
+<div>
+    <strong><em>"Consent"</em></strong>
+    <br>
+    <div style="text-indent: 2em;">
+        In some cases, we process Personal Data based on the consent you expressly grant to us at the time we collect such data. When we process Personal Data based on your consent, it will be expressly indicated to you at the point and time of collection.  
+    </div>
+    <br>
+</div>
+<div>
+    <strong><em>"Other Processing Grounds"</em></strong>
+    <br>
+    <div style="text-indent: 2em;">
+        From time to time we may also need to process Personal Data to comply with a legal obligation, if it is necessary to protect the vital interests of you or other data subjects, or if it is necessary for a task carried out in the public interest.
+    </div>
+    <br>
+</div>
+<div class="md-title">Are there any other reasons that you may need to access user data?</div>
+<md-radio-group ng-model="questionnaire.usage.answer"
+                class="md-vertical-padding"
+                layout="row"
+                layout-align="space-around center">
+    <md-radio-button ng-value="true">Yes</md-radio-button>
+    <md-radio-button ng-value="false">No</md-radio-button>
+</md-radio-group>
+<div ng-show="questionnaire.usage.answer">
+    <div class="md-title">Please provide a brief description</div>
+    <md-input-container class="md-block" flex>
+        <label>Description</label>
+        <textarea ng-model="questionnaire.usage.answerDescription"></textarea>
+    </md-input-container>
+</div>
+
+<!-- dialog boxes -->
+
+<div style="display: none;">
+    <div class="md-dialog-container" id="legitimateInterestDialogContainer">
+        <md-dialog>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <label class="md-headline" flex>Examples of Legitimate Interest</label>
+                    <md-button class="md-icon-button" ng-click="cancelDialog()">
+                        <md-icon md-font-set="material-icons"> close </md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+            <md-list>
+                <md-list-item>
+                    &#9679 Operation and improvement of our business, products and services.
+                </md-list-item>
+                <md-list-item>
+                    &#9679 Marketing of our products and services.
+                </md-list-item>
+                <md-list-item>
+                    &#9679 Provision of customer support.
+                </md-list-item>
+                <md-list-item>
+                    &#9679 Protection from fraud or security threats.
+                </md-list-item>
+                <md-list-item>
+                    &#9679 Compliance with legal obligations.
+                </md-list-item>
+                <md-list-item>
+                    &#9679 Completion of corporate transactions.
+                </md-list-item>
+            </md-list>
+        </md-dialog>
+    </div>
+</div>
