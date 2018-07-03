@@ -1,5 +1,5 @@
 <md-content class="md-block md-padding md-vertical-margin privacyPolicyGeneratorContainer"
-            ng-show="newPolicy.questionaire">
+            ng-show="newPolicy.questionnaire">
     <md-tabs md-selected="newPolicy.selectedTab" md-dynamic-height="true">
         <md-tab label="Data Storage">
             <questionnaire-storage></questionnaire-storage>
@@ -16,7 +16,7 @@
                ng-hide="newPolicy.selectedTab == 2">
         Next
     </md-button>
-    <md-button class="md-primary md-raised unisyn-big-button">
+    <md-button class="md-primary md-raised unisyn-big-button" ng-click="showFinishedPolicy()">
         Generate Policy
     </md-button>
 </md-content>

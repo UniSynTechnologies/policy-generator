@@ -11,7 +11,7 @@
 <div>
     <strong><em>"The {{ newPolicy.companyName }} Team"</em></strong>
     <br>
-    <div style="text-indent: 2em;">
+    <div class="textIndent">
         Information may be shared internally to help provide, improve, protect, and promote our service.
     </div>
     <br>
@@ -19,7 +19,7 @@
 <div>
     <strong><em>"Third Party Applications"</em></strong>
     <br>
-    <div style="text-indent: 2em;">
+    <div class="textIndent">
         If you choose to integrate any {{ newPolicy.companyName }} applications with 3rd party applications,
         remember that their use of your information will be governed by their privacy policies and terms.
     </div>
@@ -28,7 +28,7 @@
 <div>
     <strong><em>"Legal"</em></strong>
     <br>
-    <div style="text-indent: 2em;">
+    <div class="textIndent">
         We may disclose your information to third parties if necessary to comply with the law. 
     </div>
     <br>
@@ -41,10 +41,18 @@
     <md-radio-button ng-value="true">Yes</md-radio-button>
     <md-radio-button ng-value="false">No</md-radio-button>
 </md-radio-group>
-<div ng-show="questionnaire.sharing.answer">
-    <div class="md-title">Please provide a brief description</div>
-    <md-input-container class="md-block" flex>
-        <label>Description</label>
-        <textarea ng-model="questionnaire.sharing.answerDescription"></textarea>
-    </md-input-container>
+<div ng-show="questionnaire.sharing.answer" class="md-vertical-padding-bottom">
+    <div class="md-title md-underline">
+        Please list the additional ways you will share user data
+    </div>
+    <md-chips ng-model="questionnaire.sharing.answerDescription"
+              readonly="false"
+              md-removable="true"
+              md-enable-chip-edit="true"
+              placeholder="New Clause"
+              secondary-placeholder="+Another">
+    </md-chips>
+    <br>
+    <div class="md-subheader"><em>Press ENTER to add a new item to the list</em></div>
+    <br>
 </div>

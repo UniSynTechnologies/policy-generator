@@ -1,7 +1,9 @@
 app.controller('mainCtrl', ['$scope', '$mdDialog', function($scope, $mdDialog){
     $scope.newPolicy = {
+        untouched: true,
         addingInfo: false,
-        questionaire: false,
+        questionnaire: false,
+        finished: false,
         selectedTab: 0,
         companyName: "",
         email: "",
@@ -18,36 +20,40 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', function($scope, $mdDialog){
     $scope.questionnaire = {
         storage: {
             answer: false,
-            answerDescription: "",
+            answerDescription: [],
         },
         usage: {
             answer: false,
-            answerDescription: "",
+            answerDescription: [],
         },
         sharing: {
             answer: false,
-            answerDescription: "",
+            answerDescription: [],
         },
     }
 
     $scope.startNewPolicy = function() {
+        $scope.newPolicy.untouched = false;
         $scope.newPolicy.addingInfo = true;
     }
 
     $scope.showQuestionnaire = function() {
-        if ($scope.newPolicy.addingInfo) {
-            $scope.newPolicy.addingInfo = false;
-            $scope.newPolicy.questionaire = true;
-        }
+        $scope.newPolicy.addingInfo = false;
+        $scope.newPolicy.questionnaire = true;
+        $scope.newPolicy.finished = false;
     }
 
     $scope.backToInitialInfo = function() {
-        if ($scope.newPolicy.questionaire) {
-            $scope.newPolicy.questionaire = false;
-            $scope.newPolicy.addingInfo = true;
-        }
+        $scope.newPolicy.addingInfo = true;
+        $scope.newPolicy.questionnaire = false;
+        $scope.newPolicy.finished = false;
     }
 
+    $scope.showFinishedPolicy = function() {
+        $scope.newPolicy.addingInfo = false,
+        $scope.newPolicy.questionnaire = false,
+        $scope.newPolicy.finished = true;
+    }
     $scope.nextTab = function() {
         $scope.newPolicy.selectedTab += 1;
     }

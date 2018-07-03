@@ -53,6 +53,14 @@ md-input-container .md-errors-spacer {
     padding-bottom: 8px;
 }
 
+.md-vertical-padding-top {
+    padding-top: 8px;
+}
+
+.md-vertical-padding-bottom {
+    padding-bottom: 8px;
+}
+
 .md-vertical-margin {
     margin-top: 8px;
     margin-bottom: 8px;
@@ -112,6 +120,10 @@ md-input-container .md-errors-spacer {
 
 .textAlignCenter {
     text-align: center;
+}
+
+.textIndent {
+    text-indent: 2em;
 }
 
 .bannerContent {

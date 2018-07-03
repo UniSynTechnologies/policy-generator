@@ -10,7 +10,7 @@
 <div>
     <strong><em>"Account Information"</em></strong>
     <br>
-    <div style="text-indent: 2em;">
+    <div class="textIndent">
         Your name and email address you provide during account creation,
         and your payment info, company name, and physical address when you
          convert to a paid account.
@@ -20,7 +20,7 @@
 <div>
     <strong><em>"Application data"</em></strong>
     <br>
-    <div style="text-indent: 2em;">
+    <div class="textIndent">
         Any data that you add to any {{ newPolicy.companyName }} application
         (such as products, order information, comments, etc.) is stored in our systems.
         Additionally, when you use our application, we store some usage analytics to  monitor performance.
@@ -30,7 +30,7 @@
 <div>
     <strong><em>"Usage data"</em></strong>
     <br>
-    <div style="text-indent: 2em;">
+    <div class="textIndent">
         We collect information about the devices you use to access our services.
         This includes things like product version, and identifiers of your devices.
     </div>
@@ -39,7 +39,7 @@
 <div>
     <strong><em>"Cookies and other technologies"</em></strong>
     <br>
-    <div style="text-indent: 2em;">
+    <div class="textIndent">
         We use “cookies” on {{ newPolicy.companyWebsite }},
         its  subdomains and it’s affiliated sites.
         A cookie is a piece of data stored on a site  visitor's hard drive,
@@ -59,10 +59,18 @@
     <md-radio-button ng-value="true">Yes</md-radio-button>
     <md-radio-button ng-value="false">No</md-radio-button>
 </md-radio-group>
-<div ng-show="questionnaire.storage.answer">
-    <div class="md-title">Please provide a brief description</div>
-    <md-input-container class="md-block" flex>
-        <label>Description</label>
-        <textarea ng-model="questionnaire.storage.answerDescription"></textarea>
-    </md-input-container>
+<div ng-show="questionnaire.storage.answer" class="md-vertical-padding-bottom">
+    <div class="md-title">
+        Please list any additional data that will be tracked and stored
+    </div>
+    <md-chips ng-model="questionnaire.storage.answerDescription"
+              readonly="false"
+              md-removable="true"
+              md-enable-chip-edit="true"
+              placeholder="New Clause"
+              secondary-placeholder="+Another">
+    </md-chips>
+    <br>
+    <div class="md-subheader"><em>Press ENTER to add a new item to the list</em></div>
+    <br>
 </div>
