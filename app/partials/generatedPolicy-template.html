@@ -23,11 +23,12 @@
         <li>
             <strong>Cookies and other technologies:​​</strong>​ We use “cookies” on {{ newPolicy.companyWebsite }}, its  subdomains and it’s affiliated sites. A cookie is a piece of data stored on a site  visitor's hard drive, to help us improve your access to our site and identify repeat  visitors to our site. For instance, when we use a cookie to identify you, you would  not have to login and provide a password more than once, thereby saving time  while on our site. Cookies can also enable us to track and target the interests of  our users to enhance the experience on our site. Usage of a cookie is in no way  linked to any personally identifiable information on our site.
         </li>
-        <li ng-show="questionnaire.storage.answer &&
-                    questionnaire.storage.answerDescription.length > 0">
+        <li id="miscData"
+            ng-show="questionnaire.storage.answer &&
+                     questionnaire.storage.answerDescription.length > 0">
             <strong>Misc. Data</strong> Company will also collect different types of miscellaneous
             data outlined as the following:
-            <ul>
+            <ul id="miscDataList">
                 <li ng-repeat="dataType in questionnaire.storage.answerDescription">
                     {{ dataType }}
                 </li>
@@ -48,11 +49,12 @@
 
         <li><strong>Legal:​​</strong> We may disclose your information to third parties if necessary to comply with the law.</li>
 
-        <li ng-show="questionnaire.sharing.answer &&
-        questionnaire.sharing.answerDescription.length > 0">
-        <strong>Other Methods of Sharing:</strong> Company may also disclose user data for
-        additional reasons such as:
-            <ul>
+        <li id="miscSharing"
+            ng-show="questionnaire.sharing.answer &&
+                     questionnaire.sharing.answerDescription.length > 0">
+            <strong>Other Methods of Sharing:</strong> Company may also disclose user data for
+            additional reasons such as:
+            <ul id="miscSharingList">
                 <li ng-repeat="sharingReason in questionnaire.sharing.answerDescription">
                     {{ sharingReason }}
                 </li>
@@ -67,7 +69,7 @@
 
     <label class="md-headline">5. What Personal Information Can I Access?</label>
     <p>You may access and edit billing information by logging in and navigating to your account  details page. If you have any questions about viewing or updating information we have  on file about you, please contact us at
-    ​compliance@{{ wwwRemover( newPolicy.companyWebsite ) }}​.</p>
+    ​ compliance@{{ wwwRemover( newPolicy.companyWebsite ) }}​.</p>
 
     <label class="md-headline">6. What Choices Do I Have? </label>
     <p class="textIndent">You can always opt not to disclose information to use, but keep in mind some  information may be needed to register with us or to take advantage of some of our  special features.
@@ -154,7 +156,7 @@
         <li><strong>Other Processing Grounds:​</strong> From time to time we may also need to process Personal Data to comply with a legal obligation, if it is necessary to protect the vital interests of you or other data subjects, or if it is necessary for a task carried out in the public interest.
         </li>
     </ul>
-    <label class="md-title"><strong>How and With Whom Do We Share Your Data?</strong></label>
+    <label class="md-title"><strong>How And With Whom Do We Share Your Data?</strong></label>
     <p>We share Personal Data with vendors, third party service providers and agents who work  on our behalf and provide us with services related to the purposes described in this  Privacy Policy or our Terms of Service. These parties include:</p>
     <ul>
         <li>Payment processors</li>
@@ -232,5 +234,5 @@
             {{ newPolicy.companyAddress.country }},
             {{ newPolicy.companyAddress.zip }}
     </p>
-    <p><strong>Phone Number:</strong> {{ newPolicy.companyPhoneNumber }}</p>
+    <p><strong>Phone Number:</strong> {{ formatPhoneNumber( newPolicy.companyPhoneNumber ) }}</p>
 </div>

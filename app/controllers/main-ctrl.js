@@ -76,13 +76,46 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, 
         return result;
     }
 
+    $scope.formatPhoneNumber = function(s) {
+        var s2 = (""+s).replace(/\D/g, '');
+        var m = s2.match(/^(\d{3})(\d{3})(\d{4})$/);
+        return (!m) ? s : "(" + m[1] + ") " + m[2] + "-" + m[3];
+    }
+
     $scope.printElem = function(elem) {
+        var targetElement = document.getElementById(elem).innerHTML;
+        var style = "<style>" +
+                        "body {font-family: 'Roboto', sans-serif;}" +
+                    "</style>";
+        var script = "<script>" +
+                        "$('.md-display-2').css('font-size', '4.5rem');" +
+                        "$('.md-headline').css('font-size', '2.4rem');" +
+                        "$('.md-title').css('font-size', '2rem');" +
+                        "$('.textIndent').css('text-indent', '2em');" +
+                        "if ($('#miscDataList').children().length == 0) {" +
+                            "$('#miscData').remove();" +
+                        "}" +
+                        "if ($('#miscSharingList').children().length == 0) {" +
+                            "$('#miscSharing').remove();" +
+                        "}" +
+                     "</script>";
         var mywindow = window.open('', 'PRINT', 'height=400,width=600');
 
-        mywindow.document.write('<html><head><title>' + document.title  + '</title>');
+        mywindow.document.write('<html><head><title>' +
+                                $scope.newPolicy.companyName +
+                                ' Privacy Policy' +
+                                '</title>');
+        mywindow.document.write("" +
+        "<link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet'>" +
+        "");
+        mywindow.document.write("" +
+        "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>" +
+        "");
+        mywindow.document.write(style);
         mywindow.document.write("</head><body ng-app='app' ng-cloak>");
         mywindow.document.write("<div ng-controller='mainCtrl'>");
-        mywindow.document.write(document.getElementById(elem).innerHTML);
+        mywindow.document.write(targetElement);
+        mywindow.document.write(script);
         mywindow.document.write("</div>");
         mywindow.document.write('</body></html>');
         mywindow.document.close(); // necessary for IE >= 10
