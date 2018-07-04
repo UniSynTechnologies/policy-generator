@@ -139,3 +139,8 @@ md-input-container .md-errors-spacer {
 .privacyPolicyGeneratorContainer {
     width: 900px;
 }
+
+.hint {
+    opacity: .5;
+    font-size: .75rem;
+}

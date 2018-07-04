@@ -1,4 +1,4 @@
-app.controller('mainCtrl', ['$scope', '$mdDialog', function($scope, $mdDialog){
+app.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, $mdDialog, $mdToast){
     $scope.newPolicy = {
         untouched: true,
         addingInfo: false,
@@ -6,7 +6,7 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', function($scope, $mdDialog){
         finished: false,
         selectedTab: 0,
         companyName: "",
-        email: "",
+        companyPhoneNumber: "",
         companyAddress: {
             street: "",
             city: "",
@@ -69,5 +69,32 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', function($scope, $mdDialog){
 
     $scope.cancelDialog = function() {
         $mdDialog.cancel();
+    }
+
+    $scope.wwwRemover = function(websiteURL) {
+        var result = websiteURL.replace('www.', '');
+        return result;
+    }
+
+    $scope.printElem = function(elem) {
+        var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+
+        mywindow.document.write('<html><head><title>' + document.title  + '</title>');
+        mywindow.document.write("</head><body ng-app='app' ng-cloak>");
+        mywindow.document.write("<div ng-controller='mainCtrl'>");
+        mywindow.document.write(document.getElementById(elem).innerHTML);
+        mywindow.document.write("</div>");
+        mywindow.document.write('</body></html>');
+        mywindow.document.close(); // necessary for IE >= 10
+        mywindow.focus(); // necessary for IE >= 10*/
+        mywindow.print();
+        mywindow.close();
+
+        $mdToast.show(
+            $mdToast.simple()
+            .textContent('Sent to Printer!')
+            .position('top right')
+            .hideDelay(3000)
+        );
     }
 }]);

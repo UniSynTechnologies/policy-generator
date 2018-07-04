@@ -15,9 +15,10 @@
                 </div>
             </md-input-container>
             <md-input-container flex="50">
-                <label>Email Address</label>
-                <input ng-model="newPolicy.email" name="email"  ng-required="true">
-                <div ng-messages="initialInfoForm.email.$error">
+                <label>Phone Number</label>
+                <input ng-model="newPolicy.companyPhoneNumber" name="phoneNumber"  ng-required="true">
+                <div class="hint">(###) ###-####</div>
+                <div ng-messages="initialInfoForm.phoneNumber.$error">
                     <div ng-message="required"><span class="error">This field is required.</span></div>
                 </div>
             </md-input-container>

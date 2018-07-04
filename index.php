@@ -27,7 +27,8 @@
         <script src="/app/directives/questionnaireTabs/questionnaireStorage.js"></script>
         <script src="/app/directives/questionnaireTabs/questionnaireUsage.js"></script>
         <script src="/app/directives/questionnaireTabs/questionnaireSharing.js"></script>
-        <script src="/app/directives/finishedPolicy.js"></script>
+        <script src="/app/directives/policySummary.js"></script>
+        <script src="/app/directives/generatedPolicy.js"></script>
     </head>
     <body ng-app="app" ng-cloak>
         <privacy-policy-generator></privacy-policy-generator>

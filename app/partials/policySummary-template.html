@@ -1,0 +1,11 @@
+<md-content class="md-block md-padding md-vertical-margin privacyPolicyGeneratorContainer"
+            ng-show="newPolicy.finished">
+    <md-toolbar class="md-primary">
+        <div class="md-toolbar-tools">
+            <label class="md-headline" flex>We're All Done!</label>
+            <md-button ng-click="printElem('generatedPolicy')">Print</md-button>
+            <md-button ng-click="showQuestionnaire()">Back to Questionnaire</md-button>
+        </div>
+    </md-toolbar>
+    <generated-policy></generated-policy>
+</md-content>
