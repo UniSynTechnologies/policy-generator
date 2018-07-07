@@ -70,12 +70,6 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, 
         $scope.newPolicy.finished = true;
     }
 
-    $scope.printGeneratedPolicy = function() {
-        $scope.newPolicy.printing = true;
-        window.print();
-        $scope.newPolicy.printing = false;
-    }
-
     $scope.openLegitimateInterestDialog = function(event) {
         $mdDialog.show({
             contentElement: '#legitimateInterestDialogContainer',
@@ -89,13 +83,8 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, 
         $mdDialog.cancel();
     }
 
-    function formatPhoneNumber(s) {
-        var s2 = (""+s).replace(/\D/g, '');
-        var m = s2.match(/^(\d{3})(\d{3})(\d{4})$/);
-        return (!m) ? s : "(" + m[1] + ") " + m[2] + "-" + m[3];
-    }
-
     $scope.printElem = function(elem) {
+        $scope.newPolicy.printing = true;
     // Initialize variables //
         var html = "";
         var head = "";
@@ -132,6 +121,7 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, 
             newWindow.print();
             newWindow.close();
         };
+        $scope.newPolicy.printing = false;
 
     // Display Success Toast //
         $mdToast.show(
