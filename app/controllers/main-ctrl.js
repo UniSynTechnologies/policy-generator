@@ -2,8 +2,10 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, 
     $scope.newPolicy = {
         untouched: true,
         addingInfo: false,
+        disclaimer: false,
         questionnaire: false,
         finished: false,
+        printing: false,
         selectedTab: 0,
         companyName: "",
         companyPhoneNumber: "",
@@ -15,6 +17,7 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, 
             country: "USA",
         },
         companyWebsite: "",
+        companyEmail: "",
     }
 
     $scope.questionnaire = {
@@ -37,10 +40,22 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, 
         $scope.newPolicy.addingInfo = true;
     }
 
+    $scope.showLegalDisclaimer = function() {
+        $scope.newPolicy.disclaimer = true;
+    }
+
+    $scope.closeLegalDisclaimer = function() {
+        $scope.newPolicy.disclaimer = false;
+    }
+
     $scope.showQuestionnaire = function() {
         $scope.newPolicy.addingInfo = false;
         $scope.newPolicy.questionnaire = true;
         $scope.newPolicy.finished = false;
+    }
+
+    $scope.nextTab = function() {
+        $scope.newPolicy.selectedTab += 1;
     }
 
     $scope.backToInitialInfo = function() {
@@ -54,8 +69,11 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, 
         $scope.newPolicy.questionnaire = false,
         $scope.newPolicy.finished = true;
     }
-    $scope.nextTab = function() {
-        $scope.newPolicy.selectedTab += 1;
+
+    $scope.printGeneratedPolicy = function() {
+        $scope.newPolicy.printing = true;
+        window.print();
+        $scope.newPolicy.printing = false;
     }
 
     $scope.openLegitimateInterestDialog = function(event) {
@@ -71,58 +89,51 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, 
         $mdDialog.cancel();
     }
 
-    $scope.wwwRemover = function(websiteURL) {
-        var result = websiteURL.replace('www.', '');
-        return result;
-    }
-
-    $scope.formatPhoneNumber = function(s) {
+    function formatPhoneNumber(s) {
         var s2 = (""+s).replace(/\D/g, '');
         var m = s2.match(/^(\d{3})(\d{3})(\d{4})$/);
         return (!m) ? s : "(" + m[1] + ") " + m[2] + "-" + m[3];
     }
 
     $scope.printElem = function(elem) {
+    // Initialize variables //
+        var html = "";
+        var head = "";
+        var body = "";
+        var title = "<title>" + $scope.newPolicy.companyName + " Privacy Policy</title>";
+        var angularMaterialCss = '<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">';
         var targetElement = document.getElementById(elem).innerHTML;
-        var style = "<style>" +
-                        "body {font-family: 'Roboto', sans-serif;}" +
-                    "</style>";
-        var script = "<script>" +
-                        "$('.md-display-2').css('font-size', '4.5rem');" +
-                        "$('.md-headline').css('font-size', '2.4rem');" +
-                        "$('.md-title').css('font-size', '2rem');" +
-                        "$('.textIndent').css('text-indent', '2em');" +
-                        "if ($('#miscDataList').children().length == 0) {" +
-                            "$('#miscData').remove();" +
-                        "}" +
-                        "if ($('#miscSharingList').children().length == 0) {" +
-                            "$('#miscSharing').remove();" +
-                        "}" +
-                     "</script>";
-        var mywindow = window.open('', 'PRINT', 'height=400,width=600');
 
-        mywindow.document.write('<html><head><title>' +
-                                $scope.newPolicy.companyName +
-                                ' Privacy Policy' +
-                                '</title>');
-        mywindow.document.write("" +
-        "<link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet'>" +
-        "");
-        mywindow.document.write("" +
-        "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>" +
-        "");
-        mywindow.document.write(style);
-        mywindow.document.write("</head><body ng-app='app' ng-cloak>");
-        mywindow.document.write("<div ng-controller='mainCtrl'>");
-        mywindow.document.write(targetElement);
-        mywindow.document.write(script);
-        mywindow.document.write("</div>");
-        mywindow.document.write('</body></html>');
-        mywindow.document.close(); // necessary for IE >= 10
-        mywindow.focus(); // necessary for IE >= 10*/
-        mywindow.print();
-        mywindow.close();
+    // Contruct the document //
 
+        html += "<html>";
+
+        // Head //
+            head += "<head>";
+            head += title;
+            head += angularMaterialCss;
+            head += "</head>";
+
+        html += head;
+
+        // Body //
+            body += "<body>";
+            body += targetElement;
+            body += "</body>";
+
+        html += body;
+        html += "</html>";
+
+    // Open a New Tab and Print the Contents of this Document //
+        var newWindow = window.open('', 'PRINT');
+        newWindow.document.write(html);
+        newWindow.document.close();
+        newWindow.onload = function() {
+            newWindow.print();
+            newWindow.close();
+        };
+
+    // Display Success Toast //
         $mdToast.show(
             $mdToast.simple()
             .textContent('Sent to Printer!')

@@ -13,6 +13,60 @@ md-input-container .md-errors-spacer {
     float: none; /*not sure why this would need to float since float throws off vertical flow*/
 }
 
+.unisyn-big-button.md-button {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 16px;
+}
+
+.textAlignCenter {
+    text-align: center;
+}
+
+.textIndent {
+    text-indent: 2em;
+}
+
+.backgroundTransparent {
+    background-color: rgba(0,0,0,0);
+}
+
+.bannerContent {
+    background-color: rgba(0,0,0,0);
+    color: #fff;
+}
+
+.bannerContainer {
+    background-color: #616161;
+    background-image: url(/app/assets/images/banner.jpg);
+}
+
+.privacyPolicyGeneratorContainer {
+    width: 900px;
+}
+
+.legalDisclaimerDialogContainer {
+    z-index: 10;
+    background-color: #616161;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.generatedPolicyContainer {
+    overflow: auto;
+    height: 600px;
+}
+
+
+/* media queries */
+
 @media (min-width: 960px) {
     .unisyn-hint {
         font-size: 12px;
@@ -109,38 +163,3 @@ md-input-container .md-errors-spacer {
 	}
 }
 
-.unisyn-big-button.md-button {
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 16px;
-}
-
-.textAlignCenter {
-    text-align: center;
-}
-
-.textIndent {
-    text-indent: 2em;
-}
-
-.bannerContent {
-    background-color: rgba(0,0,0,0);
-    color: #fff;
-}
-
-.bannerContainer {
-    background-color: lightgray;
-    background-image: url(/app/assets/images/banner.jpg);
-}
-
-.privacyPolicyGeneratorContainer {
-    width: 900px;
-}
-
-.hint {
-    opacity: .5;
-    font-size: .75rem;
-}

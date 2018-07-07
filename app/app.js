@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngMaterial', 'ngMessages', 'ngAnimate']);
+var app = angular.module('app', ['ngMaterial', 'ngMessages', 'ngAnimate', 'ui.mask']);
 app.config(function($mdThemingProvider) {
   var primaryColorMap =
     $mdThemingProvider.extendPalette('cyan', {
