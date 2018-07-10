@@ -1,3 +1,7 @@
+privacy-policy-generator * {
+    box-sizing: border-box;
+}
+
 .unisyn-hint {
     margin-top: 6px;
     font-size: 14px;
@@ -45,7 +49,9 @@ md-input-container .md-errors-spacer {
 }
 
 .privacyPolicyGeneratorContainer {
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
 }
 
 .legalDisclaimerDialogContainer {
@@ -57,6 +63,13 @@ md-input-container .md-errors-spacer {
     right: 0;
     bottom: 0;
     left: 0;
+    overflow: auto;
+}
+
+.legalDisclaimerDialogContainer * {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
 }
 
 .generatedPolicyContainer {
@@ -162,4 +175,3 @@ md-input-container .md-errors-spacer {
 		margin-right: 16px;
 	}
 }
-

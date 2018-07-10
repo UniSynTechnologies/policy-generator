@@ -91,6 +91,7 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, 
         var body = "";
         var title = "<title>" + $scope.newPolicy.companyName + " Privacy Policy</title>";
         var angularMaterialCss = '<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">';
+        var appCss = '<link href="/app/css/app.css" type="text/css" rel="stylesheet">';
         var targetElement = document.getElementById(elem).innerHTML;
 
     // Contruct the document //
@@ -101,6 +102,7 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, 
             head += "<head>";
             head += title;
             head += angularMaterialCss;
+            head += appCss;
             head += "</head>";
 
         html += head;

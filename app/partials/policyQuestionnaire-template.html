@@ -1,6 +1,8 @@
-<md-content class="md-block md-padding md-vertical-margin privacyPolicyGeneratorContainer"
+<md-content class="md-block md-padding md-vertical-margin"
             ng-show="newPolicy.questionnaire">
-    <md-tabs md-selected="newPolicy.selectedTab" md-dynamic-height="true">
+    <md-tabs md-selected="newPolicy.selectedTab"
+             md-dynamic-height="true"
+             md-swipe-content="true">
         <md-tab label="Data Storage">
             <questionnaire-storage></questionnaire-storage>
         </md-tab>

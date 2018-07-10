@@ -1,4 +1,4 @@
-<md-content class="md-block md-padding md-vertical-margin privacyPolicyGeneratorContainer"
+<md-content class="md-block md-padding md-vertical-margin"
             ng-show="newPolicy.addingInfo">
     <form name="initialInfoForm" ng-submit="showQuestionnaire()">
         <md-toolbar class="md-primary">
@@ -20,6 +20,7 @@
                        ng-model="newPolicy.companyPhoneNumber"
                        name="phoneNumber"
                        ui-mask="(?9?9?9) ?9?9?9-?9?9?9?9"
+                       placeholder=""
                        ui-mask-placeholder
                        ui-mask-placeholder-char="_"
                        ng-required="true">

@@ -1,10 +1,22 @@
-<md-content class="md-block md-padding md-vertical-margin privacyPolicyGeneratorContainer"
+<md-content class="md-block md-padding md-vertical-margin"
             ng-show="newPolicy.finished">
     <md-toolbar class="md-primary">
         <div class="md-toolbar-tools">
-            <label class="md-headline" flex>We're All Done!</label>
-            <md-button ng-click="printElem('generatedPolicy')">Print/Save as PDF</md-button>
-            <md-button ng-click="showQuestionnaire()">Back to Questionnaire</md-button>
+            <label class="md-headline" hide-xs flex>We're All Done!</label>
+            <md-button hide show-gt-sm ng-click="printElem('generatedPolicy')">
+                Print/Save as PDF
+            </md-button>
+            <md-button hide show-gt-sm ng-click="showQuestionnaire()">
+                Back to Questionnaire
+            </md-button>
+            <md-button hide-gt-sm ng-click="printElem('generatedPolicy')" flex>
+                <md-icon md-font-set="material-icons"> print </md-icon>
+                <md-tooltip md-direction="bottom">Print/Save to PDF</md-tooltip>
+            </md-button>
+            <md-button hide-gt-sm ng-click="showQuestionnaire()" flex>
+                <md-icon md-font-set="material-icons"> edit </md-icon>
+                <md-tooltip md-direction="bottom">Back to Questionnaire</md-tooltip>
+            </md-button>
         </div>
     </md-toolbar>
     <generated-policy></generated-policy>

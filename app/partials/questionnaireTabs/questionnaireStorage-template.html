@@ -1,7 +1,14 @@
 <md-toolbar>
     <div class="md-toolbar-tools">
-        <label class="md-headline" flex>Data Tracking and Storing</label>
-        <md-button ng-click="backToInitialInfo()">Edit Company Info</md-button>
+        <label class="md-headline" flex>Data Storage</label>
+        <md-button hide show-gt-sm ng-click="backToInitialInfo()">
+            Edit Company Info
+        </md-button>
+        <md-button hide-gt-sm ng-click="backToInitialInfo()">
+            <md-icon md-font-set="material-icons"> edit </md-icon>
+            <md-icon md-font-set="material-icons"> account_box </md-icon>
+            <md-tooltip md-direction="left">Edit Company Info</md-tooltip>
+        </md-button>
     </div>
 </md-toolbar>
 <br>
@@ -64,7 +71,6 @@
         Please list any additional data that will be tracked and stored
     </div>
     <md-chips ng-model="questionnaire.storage.answerDescription"
-              readonly="false"
               md-removable="true"
               md-enable-chip-edit="true"
               md-add-on-blur="true"
