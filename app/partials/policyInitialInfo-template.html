@@ -1,4 +1,4 @@
-<md-content class="md-block md-padding md-vertical-margin privacyPolicyGeneratorContainer"
+<md-content class="md-block md-padding md-vertical-margin"
             ng-show="newPolicy.addingInfo">
     <form name="initialInfoForm" ng-submit="showQuestionnaire()">
         <md-toolbar class="md-primary">
@@ -15,9 +15,16 @@
                 </div>
             </md-input-container>
             <md-input-container flex="50">
-                <label>Email Address</label>
-                <input ng-model="newPolicy.email" name="email"  ng-required="true">
-                <div ng-messages="initialInfoForm.email.$error">
+                <label>Phone Number</label>
+                <input type="text"
+                       ng-model="newPolicy.companyPhoneNumber"
+                       name="phoneNumber"
+                       ui-mask="(?9?9?9) ?9?9?9-?9?9?9?9"
+                       placeholder=""
+                       ui-mask-placeholder
+                       ui-mask-placeholder-char="_"
+                       ng-required="true">
+                <div ng-messages="initialInfoForm.phoneNumber.$error">
                     <div ng-message="required"><span class="error">This field is required.</span></div>
                 </div>
             </md-input-container>
@@ -46,7 +53,7 @@
             </md-input-container>
         </div>
         <div layout="column" layout-gt-sm="row">
-                <md-input-container flex="50">
+            <md-input-container flex="50">
                 <label>Zip Code</label>
                 <input ng-model="newPolicy.companyAddress.zip" name="companyAddressZip"  ng-required="true">
                 <div ng-messages="initialInfoForm.companyAddressZip.$error">
@@ -61,13 +68,25 @@
                 </div>
             </md-input-container>
         </div>
-        <md-input-container class="md-block">
-            <label>Website Url</label>
-            <input ng-model="newPolicy.companyWebsite" name="companyWebsite"  ng-required="true">
-            <div ng-messages="initialInfoForm.companyWebsite.$error">
-                <div ng-message="required"><span class="error">This field is required.</span></div>
-            </div>
-        </md-input-container>
+        <div layout="column">
+            <md-input-container class="md-block">
+                <label>Website Url</label>
+                <input ng-model="newPolicy.companyWebsite" name="companyWebsite"  ng-required="true">
+                <div ng-messages="initialInfoForm.companyWebsite.$error">
+                    <div ng-message="required"><span class="error">This field is required.</span></div>
+                </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>Email Address for Legal Questions</label>
+                <input ng-model="newPolicy.companyEmail" name="companyEmail"  ng-required="true">
+                <div ng-messages="initialInfoForm.companyEmail.$error">
+                    <div ng-message="required"><span class="error">This field is required.</span></div>
+                </div>
+            </md-input-container>
+        </div>
         <md-button type="submit" class="md-primary md-raised unisyn-big-button">Continue</md-button>
     </form>
+    <p>By clicking "Continue" you acknowledge and agree to our
+    <a href="" ng-click="showLegalDisclaimer()">Legal Disclaimer</a></p>
+    <legal-disclaimer></legal-disclaimer>
 </md-content>
