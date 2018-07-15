@@ -1,7 +1,8 @@
-app.directive('policyInitialInfo', function() {
+policyGenerator.directive('policyInitialInfo', function() {
     var directive = {
         restrict: 'E',
-        templateUrl: '/app/partials/policyInitialInfo-template.html',
+        templateUrl: policyGenerator.constants.appUrl +
+        '/app/partials/policyInitialInfo-template.html',
     };
     return directive;
 });

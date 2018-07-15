@@ -43,15 +43,23 @@ md-input-container .md-errors-spacer {
     color: #fff;
 }
 
+.bannerContent label {
+    color: #fff;
+}
+
 .bannerContainer {
     background-color: #616161;
-    background-image: url(/app/assets/images/banner.jpg);
+    background-image: url(https://s3.amazonaws.com/unisyn-central-assets/globalImages/banner.jpg);
 }
 
 .privacyPolicyGeneratorContainer {
     width: 100%;
     max-width: 900px;
     margin: auto;
+}
+
+.md-toolbar-tools .md-headline {
+    color: #fff;
 }
 
 .legalDisclaimerDialogContainer {

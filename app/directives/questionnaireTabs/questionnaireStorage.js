@@ -1,7 +1,7 @@
-app.directive('questionnaireStorage', function() {
+policyGenerator.directive('questionnaireStorage', function() {
     var directive = {
         restrict: 'E',
-        templateUrl: '/app/partials/questionnaireTabs/questionnaireStorage-template.html',
+        templateUrl: policyGenerator.constants.appUrl + '/app/partials/questionnaireTabs/questionnaireStorage-template.html',
     };
     return directive;
 });

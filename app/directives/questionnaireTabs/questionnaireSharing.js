@@ -1,7 +1,7 @@
-app.directive('questionnaireSharing', function() {
+policyGenerator.directive('questionnaireSharing', function() {
     var directive = {
         restrict: 'E',
-        templateUrl: '/app/partials/questionnaireTabs/questionnaireSharing-template.html',
+        templateUrl: policyGenerator.constants.appUrl + 'app/partials/questionnaireTabs/questionnaireSharing-template.html',
     };
     return directive;
 });
