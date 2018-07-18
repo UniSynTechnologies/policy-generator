@@ -1,3 +1,3 @@
-import './app/app.js'
-import './app/controllers/main-ctrl.js'
-import './app/directives'
+import './app.js'
+import './controllers/main-ctrl.js'
+import './directives'
