@@ -1,5 +1,8 @@
-var app = angular.module('app', ['ngMaterial', 'ngMessages', 'ngAnimate', 'ui.mask']);
-app.config(function($mdThemingProvider) {
+var policyGenerator = angular.module('policyGenerator', ['ngMaterial', 'ngMessages', 'ngAnimate', 'ui.mask']);
+policyGenerator.constants = {
+    appUrl: unisynPolicyGenerator_plugin_dir_url,
+}
+policyGenerator.config(function($mdThemingProvider) {
   var primaryColorMap =
     $mdThemingProvider.extendPalette('cyan', {
     'contrastDefaultColor': 'light'

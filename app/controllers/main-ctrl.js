@@ -1,4 +1,4 @@
-app.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, $mdDialog, $mdToast){
+policyGenerator.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, $mdDialog, $mdToast){
     $scope.newPolicy = {
         untouched: true,
         addingInfo: false,
@@ -38,6 +38,7 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, 
     $scope.startNewPolicy = function() {
         $scope.newPolicy.untouched = false;
         $scope.newPolicy.addingInfo = true;
+        $scope.scrollIntoView('initialInfoToolbar');
     }
 
     $scope.showLegalDisclaimer = function() {
@@ -52,22 +53,26 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, 
         $scope.newPolicy.addingInfo = false;
         $scope.newPolicy.questionnaire = true;
         $scope.newPolicy.finished = false;
+        $scope.scrollIntoView('questionnaireTabToolbar');
     }
 
     $scope.nextTab = function() {
         $scope.newPolicy.selectedTab += 1;
+        $scope.scrollIntoView('questionnaireTabToolbar');
     }
 
     $scope.backToInitialInfo = function() {
         $scope.newPolicy.addingInfo = true;
         $scope.newPolicy.questionnaire = false;
         $scope.newPolicy.finished = false;
+        $scope.scrollIntoView('initialInfoToolbar');
     }
 
     $scope.showFinishedPolicy = function() {
-        $scope.newPolicy.addingInfo = false,
-        $scope.newPolicy.questionnaire = false,
+        $scope.newPolicy.addingInfo = false;
+        $scope.newPolicy.questionnaire = false;
         $scope.newPolicy.finished = true;
+        $scope.scrollIntoView('policySummaryToolbar');
     }
 
     $scope.openLegitimateInterestDialog = function(event) {
@@ -81,6 +86,15 @@ app.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, 
 
     $scope.cancelDialog = function() {
         $mdDialog.cancel();
+    }
+
+    $scope.scrollIntoView = function(target) {
+        setTimeout(function() {
+            scrollTarget = document.getElementById(target);
+            scrollTarget.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }, 10);
     }
 
     $scope.printElem = function(elem) {

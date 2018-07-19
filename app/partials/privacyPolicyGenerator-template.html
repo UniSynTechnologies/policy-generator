@@ -1,11 +1,4 @@
 <div class="mainContainer" ng-controller='mainCtrl'>
-    <header class="md-horizontal-padding"
-            layout="row"
-            layout-align="space-between center">
-        <img src="\app\assets\images\unisynLogoSmall.png" class="md-padding" height="120px" width="120px">
-        <md-button class="md-primary">More Tools</md-button>
-    </header>
-    <md-divider></md-divider>
     <div class="bannerContainer" layout="column" layout-gt-sm="row" layout-align="space-around center">
         <md-content class="md-block md-padding md-margin bannerContent">
             <label class="md-display-3">Privacy Policy Generator</label>
@@ -15,7 +8,8 @@
                 you can have a custom policy on your desk in as little as <strong>Five Minutes</strong>!
                 </p>
             </div>
-            <md-button class="md-primary md-raised unisyn-big-button" ng-click="startNewPolicy()" ng-show="newPolicy.untouched">Let's Get Started</md-button>
+            <md-button class="md-primary md-raised unisyn-big-button"
+                       ng-click="startNewPolicy(); scrollIntoView('initialInfoToolbar')" ng-show="newPolicy.untouched">Let's Get Started</md-button>
         </md-content>
     </div>
     <div class="privacyPolicyGeneratorContainer">

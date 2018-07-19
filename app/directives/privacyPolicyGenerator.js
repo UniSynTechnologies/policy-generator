@@ -1,7 +1,8 @@
-app.directive('privacyPolicyGenerator', function() {
+policyGenerator.directive('privacyPolicyGenerator', function() {
     var directive = {
         restrict: 'E',
-        templateUrl: '/app/partials/privacyPolicyGenerator-template.html',
+        templateUrl: policyGenerator.constants.appUrl +
+        '/app/partials/privacyPolicyGenerator-template.html',
         controller: 'mainCtrl',
     };
     return directive;

@@ -1,4 +1,4 @@
-<md-toolbar>
+<md-toolbar id="questionnaireTabToolbar">
     <div class="md-toolbar-tools">
         <label class="md-headline" flex>Data Storage</label>
         <md-button hide show-gt-sm ng-click="backToInitialInfo()">
@@ -18,8 +18,8 @@
     <strong><em>"Account Information"</em></strong>
     <br>
     <div class="textIndent">
-        Your name and email address you provide during account creation,
-        and your payment info, company name, and physical address when you
+        The name and email address your users provide during account creation,
+        and their payment info, company name, and physical address when they
          convert to a paid account.
     </div>
     <br>
@@ -28,9 +28,9 @@
     <strong><em>"Application data"</em></strong>
     <br>
     <div class="textIndent">
-        Any data that you add to any {{ newPolicy.companyName }} application
-        (such as products, order information, comments, etc.) is stored in our systems.
-        Additionally, when you use our application, we store some usage analytics to  monitor performance.
+        Any data that your users add to any {{ newPolicy.companyName }} application
+        (such as products, order information, comments, etc.) is stored in your systems.
+        Additionally, when they use your application, you will store some usage analytics to monitor performance.
     </div>
     <br>
 </div>
@@ -38,8 +38,8 @@
     <strong><em>"Usage data"</em></strong>
     <br>
     <div class="textIndent">
-        We collect information about the devices you use to access our services.
-        This includes things like product version, and identifiers of your devices.
+        Your company will collect information about the devices users use to access your services.
+        This includes things like product version, and identifiers of their devices.
     </div>
     <br>
 </div>
@@ -47,14 +47,14 @@
     <strong><em>"Cookies and other technologies"</em></strong>
     <br>
     <div class="textIndent">
-        We use “cookies” on {{ newPolicy.companyWebsite }},
-        its  subdomains and it’s affiliated sites.
-        A cookie is a piece of data stored on a site  visitor's hard drive,
-        to help us improve your access to our site and identify repeat  visitors to our site.
-        For instance, when we use a cookie to identify you,
-        you would  not have to login and provide a password more than once, thereby saving time  while on our site.
-        Cookies can also enable us to track and target the interests of  our users to enhance the experience on our site.
-        Usage of a cookie is in no way  linked to any personally identifiable information on our site.
+        You may use “cookies” on {{ newPolicy.companyWebsite }},
+        its subdomains and it’s affiliated sites.
+        A cookie is a piece of data stored on a site visitor's hard drive,
+        to help you improve their access to your site and identify repeat visitors to your site.
+        For instance, when you use a cookie to identify your users,
+        they will not have to login and provide a password more than once, thereby saving time while on your site.
+        Cookies can also enable you to track and target the interests of your users to enhance the experience on your site.
+        Usage of a cookie is in no way linked to any personally identifiable information on your site.
     </div>
     <br>
 </div>
@@ -74,7 +74,7 @@
               md-removable="true"
               md-enable-chip-edit="true"
               md-add-on-blur="true"
-              placeholder="Ex: 'Physical Description'"
+              placeholder="Ex: Physical Description"
               secondary-placeholder="+Another">
     </md-chips>
     <br>

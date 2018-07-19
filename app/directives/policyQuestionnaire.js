@@ -1,7 +1,8 @@
-app.directive('policyQuestionnaire', function() {
+policyGenerator.directive('policyQuestionnaire', function() {
     var directive = {
         restrict: 'E',
-        templateUrl: '/app/partials/policyQuestionnaire-template.html',
+        templateUrl: policyGenerator.constants.appUrl +
+        '/app/partials/policyQuestionnaire-template.html',
     };
     return directive;
 });
