@@ -8,7 +8,8 @@
                 you can have a custom policy on your desk in as little as <strong>Five Minutes</strong>!
                 </p>
             </div>
-            <md-button class="md-primary md-raised unisyn-big-button" ng-click="startNewPolicy()" ng-show="newPolicy.untouched">Let's Get Started</md-button>
+            <md-button class="md-primary md-raised unisyn-big-button"
+                       ng-click="startNewPolicy(); scrollIntoView('initialInfoToolbar')" ng-show="newPolicy.untouched">Let's Get Started</md-button>
         </md-content>
     </div>
     <div class="privacyPolicyGeneratorContainer">
