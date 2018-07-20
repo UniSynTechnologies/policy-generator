@@ -49,47 +49,21 @@ function unisyn_policy_generator_enqueue_scripts() {
 
     wp_enqueue_script( 'angular-messages-1.6.4', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-messages.min.js' );
 
-    wp_enqueue_script( 'angular-ui-mask', plugin_dir_url( __FILE__ ) . '/app/modules/angular-ui-mask/mask.min.js' );
+    wp_enqueue_script( 'angular-ui-mask', plugin_dir_url( __FILE__ ) . 'src/modules/angular-ui-mask/mask.min.js' );
 
 // Add angular 1.1.10
 
-    wp_enqueue_script( 'angular-material-1.1.10-script', plugin_dir_url( __FILE__ ) . 'app/modules/angular-material/1.1.10/angular-material.min.js' );
+    wp_enqueue_script( 'angular-material-1.1.10-script', plugin_dir_url( __FILE__ ) . 'src/app/modules/angular-material/1.1.10/angular-material.min.js' );
 
-    wp_enqueue_style( 'angular-material-1.1.10-style', plugin_dir_url( __FILE__ ) . 'app/modules/angular-material/1.1.10/angular-material.min.css' );
+    wp_enqueue_style( 'angular-material-1.1.10-style', plugin_dir_url( __FILE__ ) . 'src/modules/angular-material/1.1.10/angular-material.min.css' );
 
-// Add app, ctrl, and directives
+// Add JavaScript
 
-    // App
-
-    wp_enqueue_script( 'unisyn-policy-generator-app', plugin_dir_url( __FILE__ ) . '/app/app.js' );
-
-    // Ctrl
-
-    wp_enqueue_script( 'unisyn-policy-generator-main-ctrl', plugin_dir_url( __FILE__ ) . '/app/controllers/main-ctrl.js' );
-
-    // Directives
-
-    wp_enqueue_script( 'unisyn-policy-generator-app-privacyPolicyGenerator', plugin_dir_url( __FILE__ ) . '/app/directives/privacyPolicyGenerator.js' );
-
-    wp_enqueue_script( 'unisyn-policy-generator-app-policyInitialInfo', plugin_dir_url( __FILE__ ) . '/app/directives/policyInitialInfo.js' );
-
-    wp_enqueue_script( 'unisyn-policy-generator-app-legalDisclaimer', plugin_dir_url( __FILE__ ) . '/app/directives/legalDisclaimer.js' );
-
-    wp_enqueue_script( 'unisyn-policy-generator-app-policyQuestionnaire', plugin_dir_url( __FILE__ ) . '/app/directives/policyQuestionnaire.js' );
-
-    wp_enqueue_script( 'unisyn-policy-generator-app-questionnaireUsage', plugin_dir_url( __FILE__ ) . '/app/directives/questionnaireTabs/questionnaireUsage.js' );
-
-    wp_enqueue_script( 'unisyn-policy-generator-app-questionnaireStorage', plugin_dir_url( __FILE__ ) . '/app/directives/questionnaireTabs/questionnaireStorage.js' );
-
-    wp_enqueue_script( 'unisyn-policy-generator-app-questionnaireSharing', plugin_dir_url( __FILE__ ) . '/app/directives/questionnaireTabs/questionnaireSharing.js' );
-
-    wp_enqueue_script( 'unisyn-policy-generator-app-policySummary', plugin_dir_url( __FILE__ ) . '/app/directives/policySummary.js' );
-
-    wp_enqueue_script( 'unisyn-policy-generator-app-generatedPolicy', plugin_dir_url( __FILE__ ) . '/app/directives/generatedPolicy.js' );
+    wp_enqueue_script( 'unisyn-policy-generator.min', plugin_dir_url( __FILE__ ) . '/dist/unisyn-policy-generator.min.js' );
 
 // Add app styles
 
-    wp_enqueue_style( 'unisyn-policy-generator', plugin_dir_url( __FILE__ ) . '/app/css/app.css' );
+    wp_enqueue_style( 'unisyn-policy-generator-style', plugin_dir_url( __FILE__ ) . '/src/css/app.css' );
 
     wp_enqueue_style( 'angular-material-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons' );
 

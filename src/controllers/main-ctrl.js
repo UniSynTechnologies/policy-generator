@@ -1,4 +1,4 @@
-policyGenerator.controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, $mdDialog, $mdToast){
+angular.module('policyGenerator').controller('mainCtrl', ['$scope', '$mdDialog', '$mdToast', function($scope, $mdDialog, $mdToast){
     $scope.newPolicy = {
         untouched: true,
         addingInfo: false,

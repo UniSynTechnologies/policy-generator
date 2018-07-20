@@ -1,3 +1,7 @@
+.mainContainer {
+    font-size: 14px;
+}
+
 privacy-policy-generator * {
     box-sizing: border-box;
 }
@@ -63,7 +67,7 @@ md-input-container .md-errors-spacer {
 }
 
 .legalDisclaimerDialogContainer {
-    z-index: 10;
+    z-index: 10000;
     background-color: #616161;
     color: #fff;
     position: fixed;
