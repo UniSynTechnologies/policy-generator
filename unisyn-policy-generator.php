@@ -37,8 +37,6 @@ function unisyn_policy_generator_enqueue_scripts() {
         var unisynPolicyGenerator_plugin_dir_url = "' . plugin_dir_url( __FILE__ ) . '";
     </script>';
 
-    wp_enqueue_script( 'jQuery-3.3.1', 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js' );
-
     wp_enqueue_script( 'angularjs-1.6.4', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js' );
 
     wp_enqueue_script( 'angular-sanitize-1.6.4', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js' );
@@ -59,7 +57,7 @@ function unisyn_policy_generator_enqueue_scripts() {
 
 // Add JavaScript
 
-    wp_enqueue_script( 'unisyn-policy-generator.min', plugin_dir_url( __FILE__ ) . '/dist/unisyn-policy-generator.min.js' );
+    wp_enqueue_script( 'unisyn-policy-generator.min', plugin_dir_url( __FILE__ ) . '/dist/unisyn-policy-generator.min.js', array('jquery'));
 
 // Add app styles
 
