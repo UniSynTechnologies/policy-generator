@@ -51,7 +51,7 @@ function unisyn_policy_generator_enqueue_scripts() {
 
 // Add angular 1.1.10
 
-    wp_enqueue_script( 'angular-material-1.1.10-script', plugin_dir_url( __FILE__ ) . 'src/app/modules/angular-material/1.1.10/angular-material.min.js' );
+    wp_enqueue_script( 'angular-material-1.1.10-script', plugin_dir_url( __FILE__ ) . 'src/modules/angular-material/1.1.10/angular-material.min.js' );
 
     wp_enqueue_style( 'angular-material-1.1.10-style', plugin_dir_url( __FILE__ ) . 'src/modules/angular-material/1.1.10/angular-material.min.css' );
 
