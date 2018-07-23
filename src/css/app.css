@@ -1,4 +1,4 @@
-.mainContainer {
+privacy-policy-generator .mainContainer {
     font-size: 14px;
 }
 
@@ -6,22 +6,22 @@ privacy-policy-generator * {
     box-sizing: border-box;
 }
 
-.unisyn-hint {
+privacy-policy-generator .unisyn-hint {
     margin-top: 6px;
     font-size: 14px;
     line-height: 14px;
     transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
 }
 
-md-input-container .unisyn-hint {
+privacy-policy-generator md-input-container .unisyn-hint {
     float: left;
 }
 
-md-input-container .md-errors-spacer {
+privacy-policy-generator md-input-container .md-errors-spacer {
     float: none; /*not sure why this would need to float since float throws off vertical flow*/
 }
 
-.unisyn-big-button.md-button {
+privacy-policy-generator .unisyn-big-button.md-button {
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -30,43 +30,43 @@ md-input-container .md-errors-spacer {
     font-size: 16px;
 }
 
-.textAlignCenter {
+privacy-policy-generator .textAlignCenter {
     text-align: center;
 }
 
-.textIndent {
+privacy-policy-generator .textIndent {
     text-indent: 2em;
 }
 
-.backgroundTransparent {
+privacy-policy-generator .backgroundTransparent {
     background-color: rgba(0,0,0,0);
 }
 
-.bannerContent {
+privacy-policy-generator .bannerContent {
     background-color: rgba(0,0,0,0);
     color: #fff;
 }
 
-.bannerContent label {
+privacy-policy-generator .bannerContent label {
     color: #fff;
 }
 
-.bannerContainer {
+privacy-policy-generator .bannerContainer {
     background-color: #616161;
     background-image: url(https://s3.amazonaws.com/unisyn-central-assets/globalImages/banner.jpg);
 }
 
-.privacyPolicyGeneratorContainer {
+privacy-policy-generator .privacyPolicyGeneratorContainer {
     width: 100%;
     max-width: 900px;
     margin: auto;
 }
 
-.md-toolbar-tools .md-headline {
+privacy-policy-generator .md-toolbar-tools .md-headline {
     color: #fff;
 }
 
-.legalDisclaimerDialogContainer {
+privacy-policy-generator .legalDisclaimerDialogContainer {
     z-index: 10000;
     background-color: #616161;
     color: #fff;
@@ -78,13 +78,13 @@ md-input-container .md-errors-spacer {
     overflow: auto;
 }
 
-.legalDisclaimerDialogContainer * {
+privacy-policy-generator .legalDisclaimerDialogContainer * {
     width: 100%;
     max-width: 900px;
     margin: auto;
 }
 
-.generatedPolicyContainer {
+privacy-policy-generator .generatedPolicyContainer {
     overflow: auto;
     height: 600px;
 }
@@ -93,96 +93,96 @@ md-input-container .md-errors-spacer {
 /* media queries */
 
 @media (min-width: 960px) {
-    .unisyn-hint {
+    privacy-policy-generator .unisyn-hint {
         font-size: 12px;
     }
 }
 
-.constrain-container {
+privacy-policy-generator .constrain-container {
 	width: 100%;
     max-width: 1200px;
 }
 
-.min-fill-height {
+privacy-policy-generator .min-fill-height {
 	min-height: 100%;
 }
 
-.min-fill-width {
+privacy-policy-generator .min-fill-width {
 	min-width: 100%;
 }
 
-.max-fill-height {
+privacy-policy-generator .max-fill-height {
 	max-height: 100%;
 }
 
-.max-fill-width {
+privacy-policy-generator .max-fill-width {
 	max-width: 100%;
 }
 
-.fill-height {
+privacy-policy-generator .fill-height {
 	height: 100%;
 }
 
-.fill-width {
+privacy-policy-generator .fill-width {
 	width: 100%;
 }
 
-.md-vertical-padding {
+privacy-policy-generator .md-vertical-padding {
     padding-top: 8px;
     padding-bottom: 8px;
 }
 
-.md-vertical-padding-top {
+privacy-policy-generator .md-vertical-padding-top {
     padding-top: 8px;
 }
 
-.md-vertical-padding-bottom {
+privacy-policy-generator .md-vertical-padding-bottom {
     padding-bottom: 8px;
 }
 
-.md-vertical-margin {
+privacy-policy-generator .md-vertical-margin {
     margin-top: 8px;
     margin-bottom: 8px;
 }
 
-.md-horizontal-padding {
+privacy-policy-generator .md-horizontal-padding {
     padding-left: 8px;
     padding-right: 8px;
 }
 
-.md-horizontal-margin {
+privacy-policy-generator .md-horizontal-margin {
     margin-left: 8px;
     margin-right: 8px;
 }
 
-.no-vertical-margin {
+privacy-policy-generator .no-vertical-margin {
     margin-top: 0;
     margin-bottom: 0;
 }
 
-.no-horizontal-margin {
+privacy-policy-generator .no-horizontal-margin {
     margin-left: 0;
     margin-right: 0;
 }
 
-.margin-center {
+privacy-policy-generator .margin-center {
     margin: auto;
 }
 
 @media (min-width: 960px) {
-	.md-vertical-padding {
+	privacy-policy-generator .md-vertical-padding {
 		padding-top: 16px;
 		padding-bottom: 16px;
 	}
-	.md-vertical-margin {
+	privacy-policy-generator .md-vertical-margin {
 		margin-top: 16px;
 		margin-bottom: 16px;
 	}
-	.md-horizontal-padding {
+	privacy-policy-generator .md-horizontal-padding {
 		padding-left: 16px;
 		padding-right: 16px;
 	}
-	.md-horizontal-margin {
+	privacy-policy-generator .md-horizontal-margin {
 		margin-left: 16px;
 		margin-right: 16px;
 	}
